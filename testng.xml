@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<!--    <groups>-->
+<!--        <run>-->
+<!--            <include name="all"/>-->
+<!--        </run>-->
+<!--    </groups>-->
+    <test name="Check Login Page">
+        <classes>
+            <class name="PocztaTest.LoginTest"/>
+        </classes>
+    </test>
+</suite>
+
+
+
+
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">-->
+<!--<suite name="Suite">-->
+<!--    <test name="Test">-->
+<!--        <classes>-->
+<!--            <class name="PocztaTest.LoginTest"/>-->
+<!--        </classes>-->
+<!--    </test> &lt;!&ndash; Test &ndash;&gt;-->
+<!--</suite> &lt;!&ndash; Suite &ndash;&gt;-->
