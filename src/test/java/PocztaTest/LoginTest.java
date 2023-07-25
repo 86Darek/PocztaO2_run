@@ -30,7 +30,9 @@ public class LoginTest{
         loginPage.clickCookies();
         loginPage.clickPoczta();
         Assert.assertTrue(loginPage.isLoginWindowVisible(),"Okno logowania nie jest widoczne");
-
+        loginPage.klikniecieWoknoLoginu();
+        String nazwaUser = "darektest86@o2.pl";
+        loginPage.uzupelnienieLoginu(nazwaUser);
 
 
 

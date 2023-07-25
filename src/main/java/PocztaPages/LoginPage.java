@@ -39,4 +39,18 @@ public class LoginPage  extends BasePage{
         }
     }
 
+    public void uzupelnienieLoginu(String loginDoEmail) {
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(oknoLogowania));
+        oknoLogowania.clear();
+        oknoLogowania.sendKeys(loginDoEmail);
+    }
+
+    public void klikniecieWoknoLoginu(){
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(oknoLogowania));
+        oknoLogowania.click();
+
+    }
+
+
+
 }
