@@ -25,7 +25,18 @@ public class LoginPage  extends BasePage{
     public void clickPoczta(){
         webDriverWait.until(ExpectedConditions.elementToBeClickable(poczta));
         poczta.click();
-
-
     }
+
+    @FindBy(xpath = "//*[@id=\"loginForm\"]/div[1]/input")
+    WebElement oknoLogowania;
+
+    public boolean isLoginWindowVisible() {
+        try {
+            webDriverWait.until(ExpectedConditions.visibilityOf(oknoLogowania)).isDisplayed();
+            return true;
+        } catch (org.openqa.selenium.TimeoutException | org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
+    }
+
 }
