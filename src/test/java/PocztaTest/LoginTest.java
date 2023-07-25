@@ -1,5 +1,6 @@
 package PocztaTest;
 
+import PocztaPages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
@@ -9,6 +10,7 @@ public class LoginTest{
 
     WebDriver driver;
     Service service;
+
 
     @BeforeMethod(alwaysRun = true)
     public void runBrowser() {
@@ -20,6 +22,13 @@ public class LoginTest{
     }
     @Test
     public void logowanieO2(){
+        LoginPage loginPage= new LoginPage(driver);
+
+        loginPage.clickCookies();
+        loginPage.clickPoczta();
+
+
+
 
     }
 }
