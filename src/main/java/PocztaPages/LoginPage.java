@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage  extends BasePage{
+public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -14,7 +14,7 @@ public class LoginPage  extends BasePage{
     @FindBy(xpath = "//button[contains(text(),'AKCEPTUJĘ I PRZECHODZĘ DO SERWISU')]")
     WebElement cookies;
 
-    public void clickCookies(){
+    public void clickCookies() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(cookies));
         cookies.click();
     }
@@ -22,7 +22,8 @@ public class LoginPage  extends BasePage{
 
     @FindBy(xpath = "//*[@id=\"header-menu\"]/li[1]/label/span")
     WebElement poczta;
-    public void clickPoczta(){
+
+    public void clickPoczta() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(poczta));
         poczta.click();
     }
@@ -45,12 +46,43 @@ public class LoginPage  extends BasePage{
         oknoLogowania.sendKeys(loginDoEmail);
     }
 
-    public void klikniecieWoknoLoginu(){
+    public void klikniecieWoknoLoginu() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(oknoLogowania));
         oknoLogowania.click();
 
     }
 
+    @FindBy(xpath = "//*[@id=\"loginForm\"]/div[2]/input")
+    WebElement oknoHasla;
 
+    public boolean isPasswordWindowVisible() {
+        try {
+            webDriverWait.until(ExpectedConditions.visibilityOf(oknoHasla)).isDisplayed();
+            return true;
+        } catch (org.openqa.selenium.TimeoutException | org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    public void uzupelnienieHasla(String haslo) {
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(oknoHasla));
+        oknoHasla.clear();
+        oknoHasla.sendKeys(haslo);
+    }
+
+    public void klikniecieWoknoHasla() {
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(oknoHasla));
+        oknoHasla.click();
+    }
+
+    @FindBy(xpath = "//*[@id=\"loginForm\"]/div[3]/button")
+    WebElement kliknijZaloguj;
+
+    public MailPage klikniecieWzaloguj() {
+        webDriverWait.until(ExpectedConditions.visibilityOf(kliknijZaloguj));
+        kliknijZaloguj.click();
+        return new MailPage(driver);
+    }
 
 }
+

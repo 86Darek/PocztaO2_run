@@ -33,7 +33,11 @@ public class LoginTest{
         loginPage.klikniecieWoknoLoginu();
         String nazwaUser = "darektest86@o2.pl";
         loginPage.uzupelnienieLoginu(nazwaUser);
-
+        Assert.assertTrue(loginPage.isPasswordWindowVisible(),"Okno z hasłoem nie jest widoczne");
+        loginPage.klikniecieWoknoHasla();
+        String podajHaslo = "!QAZ2wsx";
+        loginPage.uzupelnienieHasla(podajHaslo);
+        loginPage.klikniecieWzaloguj();
 
 
     }

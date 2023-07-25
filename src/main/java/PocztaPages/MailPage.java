@@ -2,8 +2,8 @@ package PocztaPages;
 
 import org.openqa.selenium.WebDriver;
 
-public class MainPage extends BasePage{
-    public MainPage(WebDriver driver) {
+public class MailPage extends BasePage{
+    public MailPage(WebDriver driver) {
         super(driver);
     }
 }
