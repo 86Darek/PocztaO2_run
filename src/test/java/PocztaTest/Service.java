@@ -20,7 +20,7 @@ public class Service {
     }
 
     public String urlStringO2() {
-        return "https://www.o2.pl/";
+        return "https://www.interia.pl/";
     }
 
     public String getDriver() {

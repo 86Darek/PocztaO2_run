@@ -8,11 +8,14 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTest{
+public class DeleteAllMessagesTest {
 
     WebDriver driver;
     Service service;
     LoginPage loginPage;
+    MailPage mailPage;
+
+
 
 
 
@@ -24,27 +27,31 @@ public class LoginTest{
         System.setProperty(service.chromeDriver(), service.getDriver());
         driver.get(service.urlStringO2());
         driver.manage().window().maximize();
-    }
-    @Test
-    public void logowanieO2(){
-        LoginPage loginPage= new LoginPage(driver);
-
-
-
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.clickCookies();
         loginPage.clickPoczta();
-        Assert.assertTrue(loginPage.isLoginWindowVisible(),"Okno logowania nie jest widoczne");
+        Assert.assertTrue(loginPage.isLoginWindowVisible(), "Okno logowania nie jest widoczne");
         loginPage.klikniecieWoknoLoginu();
         String nazwaUser = "darektest86@interia.pl";
         loginPage.uzupelnienieLoginu(nazwaUser);
-        Assert.assertTrue(loginPage.isPasswordWindowVisible(),"Okno z hasłoem nie jest widoczne");
+        Assert.assertTrue(loginPage.isPasswordWindowVisible(), "Okno z hasłoem nie jest widoczne");
         loginPage.klikniecieWoknoHasla();
         String podajHaslo = "!QAZ2wsxTest";
         loginPage.uzupelnienieHasla(podajHaslo);
         loginPage.klikniecieWzaloguj();
         Assert.assertTrue(loginPage.isNewMessageButtonVisible(), "Przycisk nie jest widoczny");
+    }
+
+    @Test
+
+    public void DeleteAllMesageTest(){
+
+        MailPage mailPage = new MailPage(driver);
+
+        mailPage.clickOdebrane();
 
 
 
     }
+
 }
