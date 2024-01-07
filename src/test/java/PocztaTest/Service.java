@@ -24,6 +24,7 @@ public class Service {
     }
 
     public String getDriver() {
-        return "D:/drivery/chromedriver.exe";
+       return "D:/drivery/chromedriver.exe";
+        //return "C:/Drivers/chromedriver.exe";
     }
 }
